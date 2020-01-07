@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const uniqueValidator = require('mongoose-unique-validator')
-const autoIncrement = require('mongoose-auto-increment')
 
 const registerDetails = new Schema({
     firstname: {
@@ -48,17 +46,6 @@ const registerDetails = new Schema({
     timestamps: true,
 })
 
-
-autoIncrement.initialize(mongoose.connection)
-registerDetails.plugin(uniqueValidator, {
-    message: 'already exists.',
-})
-
-registerDetails.plugin(autoIncrement.plugin, {
-    model: 'registerdetails',
-    field: '_id',
-    startAt: 101
-})
 
 const registerSchema = mongoose.model('registerdetails', registerDetails)
 module.exports = registerSchema;

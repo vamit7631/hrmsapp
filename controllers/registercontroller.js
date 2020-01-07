@@ -19,3 +19,13 @@ module.exports.getAllDetails = async function (req, res) {
         return res.status(400).json({ 'err' : e});
     }
 }
+
+module.exports.loginDetails = async function (req, res) {
+    try {
+
+        let result = await registerserviceObj.loginDetails(req.params);
+        return res.status(200).json({ "status": "Sucess", "data": result });
+    } catch (e) {
+        return res.status(400).json({ 'err': e , "message": "Data Not Found"});
+    }
+}

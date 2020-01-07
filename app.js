@@ -9,7 +9,7 @@ const routes = require('./routes/router')
 const swaggerUi = require('swagger-ui-express')
 const swaggerJSDoc = require('swagger-jsdoc');
 const fileUpload = require('express-fileupload');
-const config = require('./config/connect')
+const config = require('./config/db')
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','html');
 
